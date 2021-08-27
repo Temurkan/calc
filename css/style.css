@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'SFUI';
+    src: url(../fonts/SFUIDisplay-Light.ttf);
+}
+@font-face {
+    font-family: 'SFUI-reg';
+    src: url(../fonts/SFUIText-Regular.ttf);
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'SFUI';
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background: #000;
+}
+
+.calc-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calc-grid > button{
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    font-size: 2.6em;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.calc-grid > button:hover{
+    background-color: #7e7e7e;
+}
+
+.calc-grid .symbol{
+    background-color: #ff9500;
+    font-size: 3em;
+}
+
+.calc-grid .symbol:hover{
+    background-color: #fdb775;
+}
+
+.calc-grid .symbol:active{
+    background-color: #fff;
+    color: #f17f33;
+}
+
+.calc-grid .del{
+    background-color: #d4d4d2;
+    color: #000;
+    font-family: 'SFUI-reg';
+    font-size: 2.7em;
+}
+
+.calc-grid .del:hover{
+    background-color: #f3f3f3;
+}
+
+.span-two{
+    grid-column: span 2;
+    min-width: 190px;    
+}
+
+.output{
+    grid-column: 1 / -1;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand{
+    color: #fff;
+    font-size: 2rem;
+}
+
+.output .current-operand{
+    color: #fff;
+    font-size: 3.5rem;
+}
